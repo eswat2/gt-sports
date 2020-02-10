@@ -1,0 +1,32 @@
+{
+  "name": "gt-sports",
+  "version": "0.0.2",
+  "description": "prototype - simple GraphQL & REST api server with mock data...",
+  "author": "eswat2",
+  "repository": "eswat2/gt-sports",
+  "license": "MIT",
+  "main": "server.js",
+  "dependencies": {
+    "apollo-server-express": "2.10.0",
+    "axios": "0.19.2",
+    "chance": "1.1.4",
+    "express": "4.17.1",
+    "graphql": "14.6.0",
+    "vin-generator": "1.0.1"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "cc": "prettier --check './**/*.js'",
+    "spell": "cspell './**/*.js'",
+    "test": "echo skipping...",
+    "deploy": "now --prod",
+    "open": "open https://gt-sports.eswat2.now.sh/graphql"
+  }
+}
