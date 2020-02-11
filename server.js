@@ -8,7 +8,7 @@ const express = require('express') // call express
 const { ApolloServer, gql } = require('apollo-server-express')
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
-const { fetchCars, fetchExotics, fetchSolution } = require('./utils/api-module')
+const axios = require('axios')
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -31,6 +31,13 @@ const port = process.env.PORT || 8080 // set our port
 
 const API_HOST = process.env.API_HOST || `http://localhost:${port}`
 
+const fetchApi = (host, api, count, callback) => {
+  const url = count ? `${host}/api/${api}?count=${count}` : `${host}/api/${api}`
+  axios.get(url).then(({ data }) => {
+    callback && callback(data)
+  })
+}
+
 // GRAPHQL -------------------------------------------
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -38,6 +45,11 @@ const typeDefs = gql`
     solution: Solution
     cars: [GTSport]
     exotics: [GTSport]
+    groups: [String]
+    makes: [String]
+    hash(count: Int!): [String]
+    slug(count: Int!): String
+    uuid(count: Int!): [String]
   }
 
   type Solution {
@@ -87,26 +99,9 @@ const typeDefs = gql`
   }
 `
 
-const promiseData = () => {
+const promiseApi = (api, count) => {
   return new Promise((resolve, reject) => {
-    fetchSolution(API_HOST, data => {
-      console.log('-- id: ', data.id)
-      resolve(data)
-    })
-  })
-}
-
-const promiseCars = () => {
-  return new Promise((resolve, reject) => {
-    fetchCars(API_HOST, data => {
-      resolve(data)
-    })
-  })
-}
-
-const promiseExotics = () => {
-  return new Promise((resolve, reject) => {
-    fetchExotics(API_HOST, data => {
+    fetchApi(API_HOST, api, count, data => {
       resolve(data)
     })
   })
@@ -116,13 +111,28 @@ const promiseExotics = () => {
 const resolvers = {
   Query: {
     solution: () => {
-      return promiseData()
+      return promiseApi('solution')
     },
     cars: () => {
-      return promiseCars()
+      return promiseApi('cars')
     },
     exotics: () => {
-      return promiseExotics()
+      return promiseApi('exotics')
+    },
+    groups: () => {
+      return promiseApi('groups')
+    },
+    makes: () => {
+      return promiseApi('makes')
+    },
+    hash: (obj, { count }) => {
+      return promiseApi('hash', count)
+    },
+    slug: (obj, { count }) => {
+      return promiseApi('slug', count)
+    },
+    uuid: (obj, { count }) => {
+      return promiseApi('uuid', count)
     },
   },
 }
