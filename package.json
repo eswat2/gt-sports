@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "apollo-server-express": "2.10.0",
+    "apollo-server-express": "2.10.1",
     "axios": "0.19.2",
     "chance": "1.1.4",
     "express": "4.17.1",
