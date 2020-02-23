@@ -6,54 +6,15 @@
       "use": "@now/node"
     },
     {
-      "src": "api/*.js",
-      "use": "@now/node"
-    },
-    {
       "src": "*.html",
       "use": "@now/static"
     }
   ],
   "env": {
-    "API_HOST": "https://gt-sports.eswat2.now.sh"
+    "API_HOST": "https://mock-x43.eswat2.now.sh",
+    "GTS_HOST": "https://mock-gts.eswat2.now.sh"
   },
   "routes": [
-    {
-      "src": "/api/cars",
-      "dest": "/api/cars.js"
-    },
-    {
-      "src": "/api/exotics",
-      "dest": "/api/exotics.js"
-    },
-    {
-      "src": "/api/groups",
-      "dest": "/api/groups.js"
-    },
-    {
-      "src": "/api/hash",
-      "dest": "/api/hash.js"
-    },
-    {
-      "src": "/api/makes",
-      "dest": "/api/makes.js"
-    },
-    {
-      "src": "/api/slug",
-      "dest": "/api/slug.js"
-    },
-    {
-      "src": "/api/solution",
-      "dest": "/api/solution.js"
-    },
-    {
-      "src": "/api/uuid",
-      "dest": "/api/uuid.js"
-    },
-    {
-      "src": "/api",
-      "dest": "/api/greetings.js"
-    },
     {
       "src": "/graphql",
       "dest": "/server.js"

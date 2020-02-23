@@ -29,7 +29,8 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 8080 // set our port
 
-const API_HOST = process.env.API_HOST || `http://localhost:${port}`
+const API_HOST = process.env.API_HOST
+const GTS_HOST = process.env.GTS_HOST
 
 const fetchApi = (host, api, count, callback) => {
   const url = count ? `${host}/api/${api}?count=${count}` : `${host}/api/${api}`
@@ -47,6 +48,7 @@ const typeDefs = gql`
     exotics: [GTSport]
     groups: [String]
     makes: [String]
+    colors(count: Int!): [String]
     hash(count: Int!): [String]
     slug(count: Int!): String
     uuid(count: Int!): [String]
@@ -99,9 +101,9 @@ const typeDefs = gql`
   }
 `
 
-const promiseApi = (api, count) => {
+const promiseApi = (host, api, count) => {
   return new Promise((resolve, reject) => {
-    fetchApi(API_HOST, api, count, data => {
+    fetchApi(host, api, count, data => {
       resolve(data)
     })
   })
@@ -111,28 +113,31 @@ const promiseApi = (api, count) => {
 const resolvers = {
   Query: {
     solution: () => {
-      return promiseApi('solution')
+      return promiseApi(GTS_HOST, 'solution')
     },
     cars: () => {
-      return promiseApi('cars')
+      return promiseApi(GTS_HOST, 'cars')
     },
     exotics: () => {
-      return promiseApi('exotics')
+      return promiseApi(GTS_HOST, 'exotics')
     },
     groups: () => {
-      return promiseApi('groups')
+      return promiseApi(GTS_HOST, 'groups')
     },
     makes: () => {
-      return promiseApi('makes')
+      return promiseApi(GTS_HOST, 'makes')
+    },
+    colors: (obj, { count }) => {
+      return promiseApi(API_HOST, 'colors', count)
     },
     hash: (obj, { count }) => {
-      return promiseApi('hash', count)
+      return promiseApi(API_HOST, 'hash', count)
     },
     slug: (obj, { count }) => {
-      return promiseApi('slug', count)
+      return promiseApi(API_HOST, 'slug', count)
     },
     uuid: (obj, { count }) => {
-      return promiseApi('uuid', count)
+      return promiseApi(API_HOST, 'uuid', count)
     },
   },
 }
