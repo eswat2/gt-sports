@@ -1,6 +1,11 @@
 # gt-sports
 
-A prototype GraphQL & REST server which uses the cars from GT Sports (video game).  A technology demonstration leveraging the node microservices model provided by ZEIT Now.
+A prototype GraphQL server which uses the cars from GT Sports (video game).  A technology demonstration leveraging the node microservices model provided by ZEIT Now.
+
+Underneath, the resolvers use 2 different mock servers:
+
+- [mock-gts][mock-gts] - _a simple REST server with GTS data_
+- [mock-x43][mock-x43] - _a simple REST server with mock apis_
 
 ## dev
 
@@ -11,20 +16,9 @@ To try this locally, run the following:
 
 The `now dev` command allows you to test the ZEIT Now app locally.
 
-## api
-
-- /api/cars
-- /api/exotics
-- /api/groups
-- /api/hash
-- /api/makes
-- /api/slug
-- /api/solution
-- /api/uuid
-
 ## graphql
 
-- /graphql
+- [/graphql][gql-io] - _the playground_
 
 Here's the current schema:
 
@@ -33,6 +27,12 @@ Here's the current schema:
     solution: Solution
     cars: [GTSport]
     exotics: [GTSport]
+    groups: [String]
+    makes: [String]
+    colors(count: Int!): [String]
+    hash(count: Int!): [String]
+    slug(count: Int!): String
+    uuid(count: Int!): [String]
   }
 
   type Solution {
@@ -66,7 +66,7 @@ Here's the current schema:
     group: String
     color: String
   }
-  
+
   type GroupSummary {
     groups: [String]
     makes: [String]
@@ -81,4 +81,17 @@ Here's the current schema:
     vehicles: Int
   }
 ```
+
+## who
+
+- Richard Hess
+- [eswat2.github.io][eswat2-io]
+
+
+
+[eswat2-io]: https://eswat2.github.io
+[gql-io]: https://gt-sports.eswat2.now.sh/graphql
+[mock-gts]: https://mock-gts.eswat2.now.sh/api
+[mock-x43]: https://mock-x43.eswat2.now.sh/api
+
 
