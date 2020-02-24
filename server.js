@@ -50,6 +50,7 @@ const typeDefs = gql`
     makes: [String]
     colors(count: Int!): [String]
     hash(count: Int!): [String]
+    lorem(count: Int!): [String]
     slug(count: Int!): String
     uuid(count: Int!): [String]
   }
@@ -128,10 +129,13 @@ const resolvers = {
       return promiseApi(GTS_HOST, 'makes')
     },
     colors: (obj, { count }) => {
-      return promiseApi(API_HOST, 'colors', count)
+      return promiseApi(GTS_HOST, 'colors', count)
     },
     hash: (obj, { count }) => {
       return promiseApi(API_HOST, 'hash', count)
+    },
+    lorem: (obj, { count }) => {
+      return promiseApi(API_HOST, 'lorem', count)
     },
     slug: (obj, { count }) => {
       return promiseApi(API_HOST, 'slug', count)

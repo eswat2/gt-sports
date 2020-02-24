@@ -31,6 +31,7 @@ Here's the current schema:
     makes: [String]
     colors(count: Int!): [String]
     hash(count: Int!): [String]
+    lorem(count: Int!): [String]
     slug(count: Int!): String
     uuid(count: Int!): [String]
   }
