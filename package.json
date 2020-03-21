@@ -26,5 +26,8 @@
     "test": "echo skipping...",
     "deploy": "now --prod",
     "open": "open https://gt-sports.eswat2.now.sh/graphql"
+  },
+  "devDependencies": {
+    "prettier": "2.0.0"
   }
 }

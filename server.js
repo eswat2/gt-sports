@@ -104,7 +104,7 @@ const typeDefs = gql`
 
 const promiseApi = (host, api, count) => {
   return new Promise((resolve, reject) => {
-    fetchApi(host, api, count, data => {
+    fetchApi(host, api, count, (data) => {
       resolve(data)
     })
   })
