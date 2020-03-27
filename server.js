@@ -44,6 +44,7 @@ const fetchApi = (host, api, count, callback) => {
 const typeDefs = gql`
   type Query {
     solution: Solution
+    stats: Stats
     cars: [GTSport]
     exotics: [GTSport]
     groups: [String]
@@ -59,6 +60,14 @@ const typeDefs = gql`
     id: String
     data: DealerGroup
     summary: GroupSummary
+  }
+
+  type Stats {
+    exotics: Int
+    groups: Int
+    makes: Int
+    normal: Int
+    total: Int
   }
 
   type DealerGroup {
@@ -115,6 +124,9 @@ const resolvers = {
   Query: {
     solution: () => {
       return promiseApi(GTS_HOST, 'solution')
+    },
+    stats: () => {
+      return promiseApi(GTS_HOST, 'stats')
     },
     cars: () => {
       return promiseApi(GTS_HOST, 'cars')

@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
+    "dev": "now dev",
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
     "test": "echo skipping...",
