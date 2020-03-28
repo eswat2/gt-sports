@@ -94,6 +94,7 @@ const typeDefs = gql`
     model: String
     group: String
     color: String
+    exotic: Boolean
   }
 
   type GroupSummary {
