@@ -57,7 +57,7 @@ const typeDefs = gql`
   }
 
   type Solution {
-    id: Int
+    id: String
     data: DealerGroup
     summary: GroupSummary
   }
