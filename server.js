@@ -47,7 +47,7 @@ const fetchApi = (host, api, obj, callback) => {
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    solution(stamp: Int!): Solution
+    solution(id: Int!): Solution
     stats: Stats
     cars: [GTSport]
     exotics: [GTSport]
@@ -127,8 +127,8 @@ const promiseApi = (host, api, obj) => {
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    solution: (obj, { stamp }) => {
-      return promiseApi(GTS_HOST, 'solution', { stamp })
+    solution: (obj, { id }) => {
+      return promiseApi(GTS_HOST, 'solution', { id })
     },
     stats: () => {
       return promiseApi(GTS_HOST, 'stats')
