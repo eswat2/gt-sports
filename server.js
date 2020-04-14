@@ -32,8 +32,12 @@ const port = process.env.PORT || 8080 // set our port
 const API_HOST = process.env.API_HOST
 const GTS_HOST = process.env.GTS_HOST
 
-const fetchApi = (host, api, count, callback) => {
-  const url = count ? `${host}/api/${api}?count=${count}` : `${host}/api/${api}`
+const fetchApi = (host, api, obj, callback) => {
+  const keys = Object.keys(obj)
+  const key = keys.length > 0 ? keys[0] : undefined
+  const url = key
+    ? `${host}/api/${api}?${key}=${obj[key]}`
+    : `${host}/api/${api}`
   axios.get(url).then(({ data }) => {
     callback && callback(data)
   })
@@ -43,7 +47,7 @@ const fetchApi = (host, api, count, callback) => {
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    solution(stamp: String): Solution
+    solution(stamp: Int!): Solution
     stats: Stats
     cars: [GTSport]
     exotics: [GTSport]
@@ -112,9 +116,9 @@ const typeDefs = gql`
   }
 `
 
-const promiseApi = (host, api, count) => {
+const promiseApi = (host, api, obj) => {
   return new Promise((resolve, reject) => {
-    fetchApi(host, api, count, (data) => {
+    fetchApi(host, api, obj, (data) => {
       resolve(data)
     })
   })
@@ -124,7 +128,7 @@ const promiseApi = (host, api, count) => {
 const resolvers = {
   Query: {
     solution: (obj, { stamp }) => {
-      return promiseApi(GTS_HOST, 'solution', stamp)
+      return promiseApi(GTS_HOST, 'solution', { stamp })
     },
     stats: () => {
       return promiseApi(GTS_HOST, 'stats')
@@ -142,19 +146,19 @@ const resolvers = {
       return promiseApi(GTS_HOST, 'makes')
     },
     colors: (obj, { count }) => {
-      return promiseApi(GTS_HOST, 'colors', count)
+      return promiseApi(GTS_HOST, 'colors', { count })
     },
     hash: (obj, { count }) => {
-      return promiseApi(API_HOST, 'hash', count)
+      return promiseApi(API_HOST, 'hash', { count })
     },
     lorem: (obj, { count }) => {
-      return promiseApi(API_HOST, 'lorem', count)
+      return promiseApi(API_HOST, 'lorem', { count })
     },
     slug: (obj, { count }) => {
-      return promiseApi(API_HOST, 'slug', count)
+      return promiseApi(API_HOST, 'slug', { count })
     },
     uuid: (obj, { count }) => {
-      return promiseApi(API_HOST, 'uuid', count)
+      return promiseApi(API_HOST, 'uuid', { count })
     },
   },
 }
