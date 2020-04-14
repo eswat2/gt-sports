@@ -34,10 +34,9 @@ const GTS_HOST = process.env.GTS_HOST
 
 const fetchApi = (host, api, obj, callback) => {
   const keys = Object.keys(obj)
-  const key = keys.length > 0 ? keys[0] : undefined
-  const url = key
-    ? `${host}/api/${api}?${key}=${obj[key]}`
-    : `${host}/api/${api}`
+  const url = keys.reduce((glob, key, index) => {
+    return `${glob}${index > 0 ? '&' : '?'}${key}=${obj[key]}`
+  }, `${host}/api/${api}`)
   axios.get(url).then(({ data }) => {
     callback && callback(data)
   })
@@ -47,17 +46,17 @@ const fetchApi = (host, api, obj, callback) => {
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    solution(id: String!): Solution
+    solution(id: String = "42"): Solution
     stats: Stats
     cars: [GTSport]
     exotics: [GTSport]
     groups: [String]
     makes: [String]
-    colors(count: Int!): [String]
-    hash(count: Int!): [String]
-    lorem(count: Int!): [String]
-    slug(count: Int!): String
-    uuid(count: Int!): [String]
+    colors(count: Int = 4): [String]
+    hash(count: Int = 4): [String]
+    lorem(count: Int = 4): [String]
+    slug(count: Int = 4): String
+    uuid(count: Int = 4): [String]
   }
 
   type Solution {
