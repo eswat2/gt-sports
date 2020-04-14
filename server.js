@@ -47,7 +47,7 @@ const fetchApi = (host, api, obj, callback) => {
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    solution(id: ID!): Solution
+    solution(id: String!): Solution
     stats: Stats
     cars: [GTSport]
     exotics: [GTSport]
