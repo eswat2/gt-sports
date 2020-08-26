@@ -28,6 +28,6 @@
     "open": "open https://gt-sports.eswat2.now.sh/graphql"
   },
   "devDependencies": {
-    "prettier": "2.1.0"
+    "prettier": "2.1.1"
   }
 }
