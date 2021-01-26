@@ -10,7 +10,7 @@
     "apollo-server-express": "2.19.2",
     "axios": "0.21.1",
     "express": "4.17.1",
-    "graphql": "15.4.0"
+    "graphql": "15.5.0"
   },
   "prettier": {
     "trailingComma": "es5",
