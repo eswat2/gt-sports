@@ -11,8 +11,8 @@
     }
   ],
   "env": {
-    "API_HOST": "https://mock-x43.eswat2.vercel.app",
-    "GTS_HOST": "https://mock-gts.eswat2.vercel.app"
+    "API_HOST": "https://mock-x43.vercel.app",
+    "GTS_HOST": "https://mock-gts.vercel.app"
   },
   "routes": [
     {
