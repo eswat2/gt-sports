@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "apollo-server-express": "2.24.0",
+    "apollo-server-express": "2.24.1",
     "axios": "0.21.1",
     "express": "4.17.1",
     "graphql": "15.5.0"
