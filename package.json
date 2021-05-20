@@ -24,7 +24,8 @@
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
     "test": "echo skipping...",
-    "deploy": "now --prod",
+    "predeploy": "yarn version --patch",
+    "deploy": "vc --prod",
     "open": "open https://gt-sports.eswat2.now.sh/graphql"
   },
   "devDependencies": {
