@@ -33,10 +33,12 @@ const API_HOST = process.env.API_HOST
 const GTS_HOST = process.env.GTS_HOST
 
 const fetchApi = (host, api, obj, callback) => {
-  const keys = Object.keys(obj)
+  console.log('--fetchApi: ', host, api, obj)
+  const keys = obj ? Object.keys(obj) : [];
   const url = keys.reduce((glob, key, index) => {
     return `${glob}${index > 0 ? '&' : '?'}${key}=${obj[key]}`
   }, `${host}/api/${api}`)
+  console.log(url)
   axios.get(url).then(({ data }) => {
     callback && callback(data)
   })
