@@ -26,7 +26,7 @@
     "test": "echo skipping...",
     "predeploy": "yarn version --patch",
     "deploy": "vc --prod",
-    "open": "open https://gt-sports.eswat2.now.sh/graphql"
+    "open": "open https://gt-sports.vercel.app/graphql"
   },
   "devDependencies": {
     "prettier": "2.3.0"
