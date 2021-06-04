@@ -91,8 +91,8 @@ Here's the current schema:
 
 
 [eswat2-io]: https://eswat2.github.io
-[gql-io]: https://gt-sports.eswat2.now.sh/graphql
-[mock-gts]: https://mock-gts.eswat2.now.sh/api
-[mock-x43]: https://mock-x43.eswat2.now.sh/api
+[gql-io]: https://gt-sports.vercel.app/graphql
+[mock-gts]: https://mock-gts.vercel.app/api
+[mock-x43]: https://mock-x43.vercel.app/api
 
 
