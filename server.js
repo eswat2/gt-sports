@@ -5,6 +5,7 @@
 
 // call the packages we need
 const express = require('express') // call express
+require('ts-tiny-invariant')
 const { ApolloServer, gql } = require('apollo-server-express')
 const {
   ApolloServerPluginLandingPageGraphQLPlayground,
