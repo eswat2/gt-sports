@@ -6,7 +6,9 @@
 // call the packages we need
 const express = require('express') // call express
 const { ApolloServer, gql } = require('apollo-server-express')
-const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core')
+const {
+  ApolloServerPluginLandingPageGraphQLPlayground,
+} = require('apollo-server-core')
 
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
@@ -35,11 +37,11 @@ const API_HOST = process.env.API_HOST
 const GTS_HOST = process.env.GTS_HOST
 
 const fetchApi = (host, api, obj, callback) => {
-  const keys = obj ? Object.keys(obj) : [];
+  const keys = obj ? Object.keys(obj) : []
   const url = keys.reduce((glob, key, index) => {
     return `${glob}${index > 0 ? '&' : '?'}${key}=${obj[key]}`
   }, `${host}/api/${api}`)
-  
+
   axios.get(url).then(({ data }) => {
     callback && callback(data)
   })
@@ -169,13 +171,11 @@ const startApolloServer = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    plugins: [
-      ApolloServerPluginLandingPageGraphQLPlayground(),
-    ],
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     introspection: true,
   })
 
-  await server.start();
+  await server.start()
 
   server.applyMiddleware({ app })
 
@@ -195,10 +195,12 @@ const startApolloServer = async () => {
 
   // START THE SERVER
   // =============================================================================
-  await new Promise(resolve => app.listen({ port }, resolve));
+  await new Promise((resolve) => app.listen({ port }, resolve))
 
-  console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`);
-  return { server, app };
+  console.log(
+    `🚀 Server ready at http://localhost:${port}${server.graphqlPath}`
+  )
+  return { server, app }
 }
 
 startApolloServer()
