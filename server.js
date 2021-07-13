@@ -6,6 +6,8 @@
 // call the packages we need
 const express = require('express') // call express
 const { ApolloServer, gql } = require('apollo-server-express')
+const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core')
+
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
 const axios = require('axios')
@@ -163,30 +165,40 @@ const resolvers = {
   },
 }
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  introspection: true,
-  playground: true,
-})
-server.applyMiddleware({ app })
+const startApolloServer = async () => {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    plugins: [
+      ApolloServerPluginLandingPageGraphQLPlayground(),
+    ],
+    introspection: true,
+  })
 
-// REGISTER OUR ERROR HANDLERS -----------------------
-const logErrors = (err, req, res, next) => {
-  console.log('-- ERROR')
-  console.error(err.stack)
-  next(err)
+  await server.start();
+
+  server.applyMiddleware({ app })
+
+  // REGISTER OUR ERROR HANDLERS -----------------------
+  const logErrors = (err, req, res, next) => {
+    console.log('-- ERROR')
+    console.error(err.stack)
+    next(err)
+  }
+
+  const errorHandler = (err, req, res, next) => {
+    res.status(500).send({ error: 'Something failed!...' })
+  }
+
+  app.use(logErrors)
+  app.use(errorHandler)
+
+  // START THE SERVER
+  // =============================================================================
+  await new Promise(resolve => app.listen({ port }, resolve));
+
+  console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`);
+  return { server, app };
 }
 
-const errorHandler = (err, req, res, next) => {
-  res.status(500).send({ error: 'Something failed!...' })
-}
-
-app.use(logErrors)
-app.use(errorHandler)
-
-// START THE SERVER
-// =============================================================================
-app.listen(port)
-console.log('Magic happens on port ' + port)
-console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`)
+startApolloServer()
