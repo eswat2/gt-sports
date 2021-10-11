@@ -8,9 +8,9 @@
   "main": "server.js",
   "dependencies": {
     "apollo-server-express": "3.3.0",
-    "axios": "0.21.4",
+    "axios": "0.22.0",
     "express": "4.17.1",
-    "graphql": "15.6.0",
+    "graphql": "15.6.1",
     "ts-tiny-invariant": "0.0.3"
   },
   "prettier": {
