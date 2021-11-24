@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "node server",
-    "dev": "now dev",
+    "dev": "vc dev",
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
     "test": "echo skipping...",

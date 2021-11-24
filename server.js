@@ -5,11 +5,10 @@
 
 // call the packages we need
 const express = require('express') // call express
+const cors = require('cors')
 require('ts-tiny-invariant')
-const { ApolloServer, gql } = require('apollo-server-express')
-const {
-  ApolloServerPluginLandingPageGraphQLPlayground,
-} = require('apollo-server-core')
+var { graphqlHTTP } = require('express-graphql')
+var { buildSchema } = require('graphql')
 
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
@@ -23,14 +22,7 @@ app.use(bodyParser.json())
 // app.use(express.static('public'))
 
 // configure app to use CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-  next()
-})
+app.use(cors())
 
 const port = process.env.PORT || 8080 // set our port
 
@@ -50,7 +42,7 @@ const fetchApi = (host, api, obj, callback) => {
 
 // GRAPHQL -------------------------------------------
 // Construct a schema, using GraphQL schema language
-const typeDefs = gql`
+const schema = buildSchema(`
   type Query {
     solution(id: String = "42"): Solution
     stats: Stats
@@ -119,7 +111,7 @@ const typeDefs = gql`
     makes: Int
     vehicles: Int
   }
-`
+`)
 
 const promiseApi = (host, api, obj) => {
   return new Promise((resolve, reject) => {
@@ -131,54 +123,50 @@ const promiseApi = (host, api, obj) => {
 
 // Provide resolver functions for your schema fields
 const resolvers = {
-  Query: {
-    solution: (obj, { id }) => {
-      return promiseApi(GTS_HOST, 'solution', { id })
-    },
-    stats: () => {
-      return promiseApi(GTS_HOST, 'stats')
-    },
-    cars: () => {
-      return promiseApi(GTS_HOST, 'cars')
-    },
-    exotics: () => {
-      return promiseApi(GTS_HOST, 'exotics')
-    },
-    groups: () => {
-      return promiseApi(GTS_HOST, 'groups')
-    },
-    makes: () => {
-      return promiseApi(GTS_HOST, 'makes')
-    },
-    colors: (obj, { count }) => {
-      return promiseApi(GTS_HOST, 'colors', { count })
-    },
-    hash: (obj, { count }) => {
-      return promiseApi(API_HOST, 'hash', { count })
-    },
-    lorem: (obj, { count }) => {
-      return promiseApi(API_HOST, 'lorem', { count })
-    },
-    slug: (obj, { count }) => {
-      return promiseApi(API_HOST, 'slug', { count })
-    },
-    uuid: (obj, { count }) => {
-      return promiseApi(API_HOST, 'uuid', { count })
-    },
+  solution: ({ id }) => {
+    return promiseApi(GTS_HOST, 'solution', { id })
+  },
+  stats: () => {
+    return promiseApi(GTS_HOST, 'stats')
+  },
+  cars: () => {
+    return promiseApi(GTS_HOST, 'cars')
+  },
+  exotics: () => {
+    return promiseApi(GTS_HOST, 'exotics')
+  },
+  groups: () => {
+    return promiseApi(GTS_HOST, 'groups')
+  },
+  makes: () => {
+    return promiseApi(GTS_HOST, 'makes')
+  },
+  colors: ({ count }) => {
+    return promiseApi(GTS_HOST, 'colors', { count })
+  },
+  hash: ({ count }) => {
+    return promiseApi(API_HOST, 'hash', { count })
+  },
+  lorem: ({ count }) => {
+    return promiseApi(API_HOST, 'lorem', { count })
+  },
+  slug: ({ count }) => {
+    return promiseApi(API_HOST, 'slug', { count })
+  },
+  uuid: ({ count }) => {
+    return promiseApi(API_HOST, 'uuid', { count })
   },
 }
 
-const startApolloServer = async () => {
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
-    introspection: true,
-  })
-
-  await server.start()
-
-  server.applyMiddleware({ app })
+const startGtServer = async () => {
+  app.use(
+    '/graphql',
+    graphqlHTTP({
+      schema: schema,
+      rootValue: resolvers,
+      graphiql: true,
+    })
+  )
 
   // REGISTER OUR ERROR HANDLERS -----------------------
   const logErrors = (err, req, res, next) => {
@@ -198,10 +186,7 @@ const startApolloServer = async () => {
   // =============================================================================
   await new Promise((resolve) => app.listen({ port }, resolve))
 
-  console.log(
-    `🚀 Server ready at http://localhost:${port}${server.graphqlPath}`
-  )
-  return { server, app }
+  console.log(`🚀 Server ready at http://localhost:${port}/graphql`)
 }
 
-startApolloServer()
+startGtServer()
