@@ -1,16 +1,17 @@
 {
   "name": "gt-sports",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "prototype - simple GraphQL & REST api server with mock data...",
   "author": "eswat2",
   "repository": "eswat2/gt-sports",
   "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "apollo-server-express": "3.5.0",
     "axios": "0.24.0",
+    "cors": "2.8.5",
     "express": "4.17.1",
-    "graphql": "15.7.2",
+    "express-graphql": "0.12.0",
+    "graphql": "16.0.1",
     "ts-tiny-invariant": "1.0.5"
   },
   "prettier": {
