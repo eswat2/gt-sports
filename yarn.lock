@@ -20,10 +20,10 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-axios@0.27.1:
-  version "0.27.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.1.tgz#badcc8cc38cfa812320221b600776452141ea5d4"
-  integrity sha512-ePNMai55xo5GsXajb/k756AqZqpqeDaGwGcdvbZLSSELbbYwsIn2jNmGfUPEwd8j/yu4OoMstLLIVa4t0MneEA==
+axios@0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
   dependencies:
     follow-redirects "^1.14.9"
     form-data "^4.0.0"
@@ -479,10 +479,10 @@ toidentifier@1.0.1:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
-ts-tiny-invariant@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/ts-tiny-invariant/-/ts-tiny-invariant-1.0.5.tgz#cd3534aa90fcc3277abc2f8c14bd8bcb57c6b317"
-  integrity sha512-md/ohza8w2Uj3YE/oPjZBQeNlmNH0+Hbva0SOkW9RNAyHeYoY6bzK6XvriW3Fo/sV7rEu6Mv+O+OFUkJK0euWw==
+ts-tiny-invariant@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/ts-tiny-invariant/-/ts-tiny-invariant-1.0.7.tgz#438ec6ce0456eac76df86c180f29e8165d4a17f3"
+  integrity sha512-nCA2qq7kBlpYXIr9aaVn61Q37wYLOAsBYWFinBT/vF/pzuLVpaFFJJL8moYRBrifI2YXwWSV3XROUDb1tkpVoA==
 
 type-is@~1.6.18:
   version "1.6.18"
