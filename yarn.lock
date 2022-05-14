@@ -479,10 +479,10 @@ toidentifier@1.0.1:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
-ts-tiny-invariant@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/ts-tiny-invariant/-/ts-tiny-invariant-2.0.2.tgz#92350bb6749eb479c3e415343fc27c5d39055791"
-  integrity sha512-KV/Cd5lUlBnDdQpKWaVJ0CgDsC0JWYJMgIMfVoRvKXjuVfV9xAcexKSScC13s4+mx5CU9+/dhUr732wfMgHjzQ==
+ts-tiny-invariant@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/ts-tiny-invariant/-/ts-tiny-invariant-2.0.3.tgz#bf8e475855effa3c9e25d1596fe8bb1ba2033a76"
+  integrity sha512-2p3IwcqOMC6M+ORASexNxbPB1aGncfW3jlwRxVKqaGY01aDYRupgm6Z/uqmcfhLjpb2wqwmu+PnG9b7Fc1qu5g==
 
 type-is@~1.6.18:
   version "1.6.18"
