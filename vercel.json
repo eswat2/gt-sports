@@ -7,7 +7,7 @@
     },
     {
       "src": "*.html",
-      "use": "@now/static"
+      "use": "@vercel/static"
     }
   ],
   "env": {
