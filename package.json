@@ -32,6 +32,6 @@
     "open": "open https://gt-sports.vercel.app/graphql"
   },
   "devDependencies": {
-    "prettier": "2.6.2"
+    "prettier": "2.7.0"
   }
 }
