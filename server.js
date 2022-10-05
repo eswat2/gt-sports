@@ -4,15 +4,16 @@
 // =============================================================================
 
 // call the packages we need
-const express = require('express') // call express
-const cors = require('cors')
-require('ts-tiny-invariant')
-var { graphqlHTTP } = require('express-graphql')
-var { buildSchema } = require('graphql')
+import express from 'express'
+import cors from 'cors'
+import invariant from 'ts-tiny-invariant'
+import { graphqlHTTP } from 'express-graphql'
+import { buildSchema } from 'graphql'
 
 const app = express() // define our app using express
-const bodyParser = require('body-parser')
-const axios = require('axios')
+
+import bodyParser from 'body-parser'
+import got from 'got'
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -29,15 +30,17 @@ const port = process.env.PORT || 8080 // set our port
 const API_HOST = process.env.API_HOST
 const GTS_HOST = process.env.GTS_HOST
 
-const fetchApi = (host, api, obj, callback) => {
+// NOTE:  this seems convoluted...
+const fetchApi = async (host, api, obj, callback) => {
   const keys = obj ? Object.keys(obj) : []
   const url = keys.reduce((glob, key, index) => {
     return `${glob}${index > 0 ? '&' : '?'}${key}=${obj[key]}`
   }, `${host}/api/${api}`)
 
-  axios.get(url).then(({ data }) => {
-    callback && callback(data)
-  })
+  const data = await got(url).json()
+
+  // NOTE:  once we have the data, pass it to the callback...
+  callback && callback(data)
 }
 
 // GRAPHQL -------------------------------------------
