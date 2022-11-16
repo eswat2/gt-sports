@@ -1,6 +1,6 @@
 {
   "name": "gt-sports",
-  "version": "0.0.76",
+  "version": "0.0.77",
   "description": "prototype - simple GraphQL & REST api server with mock data...",
   "author": "eswat2",
   "repository": "eswat2/gt-sports",
@@ -11,7 +11,7 @@
     "cors": "2.8.5",
     "express": "4.18.2",
     "express-graphql": "0.12.0",
-    "got": "12.5.2",
+    "got": "12.5.3",
     "graphql": "16.6.0",
     "ts-tiny-invariant": "2.0.4"
   },
