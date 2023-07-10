@@ -3,9 +3,9 @@
 
 
 "@sindresorhus/is@^5.2.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-5.3.0.tgz#0ec9264cf54a527671d990eb874e030b55b70dcc"
-  integrity sha512-CX6t4SYQ37lzxicAqsBtxA3OseeoVrh9cSJ5PFYam0GksYlupRfy1A+Q4aYD3zvcfECLc0zO2u+ZnR2UYKvCrw==
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-5.4.1.tgz#c4383ce702fb90531c3d310506bab89e70427c53"
+  integrity sha512-axlrvsHlHlFmKKMEg4VyvMzFr93JWJj4eIfXY1STVuO2fsImCa7ncaiG5gC8HKOX590AW5RtRsC41/B+OfrSqw==
 
 "@szmarczak/http-timer@^5.0.1":
   version "5.0.1"
@@ -61,9 +61,9 @@ cacheable-lookup@^7.0.0:
   integrity sha512-+qJyx4xiKra8mZrcwhjMRMUhD5NR1R8esPkzIYxX96JiecFoxAXFuz/GpR3+ev4PE1WamHip78wV0vcmPQtp8w==
 
 cacheable-request@^10.2.8:
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/cacheable-request/-/cacheable-request-10.2.10.tgz#1785984a9a4ddec8dd01792232cca474be49a8af"
-  integrity sha512-v6WB+Epm/qO4Hdlio/sfUn69r5Shgh39SsE9DSd4bIezP0mblOlObI+I0kUEM7J0JFc+I7pSeMeYaOYtX1N/VQ==
+  version "10.2.12"
+  resolved "https://registry.yarnpkg.com/cacheable-request/-/cacheable-request-10.2.12.tgz#05b97a3199d1ee65c360eb45c5af6191faa3ab6b"
+  integrity sha512-qtWGB5kn2OLjx47pYUkWicyOpK1vy9XZhq8yRTXOy+KAmjjESSRLx6SiExnnaGGUP1NM6/vmygMu0fGylNh9tw==
   dependencies:
     "@types/http-cache-semantics" "^4.0.1"
     get-stream "^6.0.1"
@@ -277,10 +277,10 @@ got@13.0.0:
     p-cancelable "^3.0.0"
     responselike "^3.0.0"
 
-graphql@16.6.0:
-  version "16.6.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.6.0.tgz#c2dcffa4649db149f6282af726c8c83f1c7c5fdb"
-  integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
+graphql@16.7.1:
+  version "16.7.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.7.1.tgz#11475b74a7bff2aefd4691df52a0eca0abd9b642"
+  integrity sha512-DRYR9tf+UGU0KOsMcKAlXeFfX89UiiIZ0dRU3mR0yJfu6OjZqUcp68NnFLnqQU5RexygFoDy1EW+ccOYcPfmHg==
 
 has-proto@^1.0.1:
   version "1.0.1"
@@ -462,10 +462,10 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==
 
-prettier@2.8.8:
-  version "2.8.8"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
-  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
+prettier@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
+  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 proxy-addr@~2.0.7:
   version "2.0.7"

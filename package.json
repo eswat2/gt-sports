@@ -12,7 +12,7 @@
     "express": "4.18.2",
     "express-graphql": "0.12.0",
     "got": "13.0.0",
-    "graphql": "16.6.0",
+    "graphql": "16.7.1",
     "ts-tiny-invariant": "2.0.4"
   },
   "prettier": {
@@ -33,6 +33,6 @@
     "open": "open https://gt-sports.vercel.app/graphql"
   },
   "devDependencies": {
-    "prettier": "2.8.8"
+    "prettier": "3.0.0"
   }
 }
