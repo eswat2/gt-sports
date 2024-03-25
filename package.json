@@ -9,7 +9,7 @@
   "type": "module",
   "dependencies": {
     "cors": "2.8.5",
-    "express": "4.19.1",
+    "express": "4.19.2",
     "express-graphql": "0.12.0",
     "got": "14.2.1",
     "graphql": "16.8.1",
