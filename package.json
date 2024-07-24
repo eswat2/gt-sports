@@ -1,6 +1,6 @@
 {
   "name": "gt-sports",
-  "version": "0.0.120",
+  "version": "0.0.121",
   "description": "prototype - simple GraphQL & REST api server with mock data...",
   "author": "eswat2",
   "repository": "eswat2/gt-sports",
