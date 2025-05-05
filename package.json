@@ -7,6 +7,9 @@
   "license": "MIT",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "cors": "2.8.5",
     "express": "5.1.0",
