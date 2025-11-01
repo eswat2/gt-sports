@@ -13,9 +13,9 @@
   integrity sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==
 
 "@sindresorhus/is@^7.0.1":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-7.1.0.tgz#ae17a8f9188644a9be064e0e67932351f82fe967"
-  integrity sha512-7F/yz2IphV39hiS2zB4QYVkivrptHHh0K8qJJd9HhuWSdvf8AN7NpebW3CcDZDBQsUPMoDKWsY2WWgW7bqOcfA==
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-7.1.1.tgz#e32f9b1e0d7e14ee9504cdc7aae4a18dea8c3ef7"
+  integrity sha512-rO92VvpgMc3kfiTjGT52LEtJ8Yc5kCWhZjLQ3LwlA4pSgPpQO7bVpYXParOD8Jwf+cVQECJo3yP/4I8aZtUQTQ==
 
 "@szmarczak/http-timer@^5.0.1":
   version "5.0.1"
@@ -71,9 +71,9 @@ cacheable-lookup@^7.0.0:
   integrity sha512-+qJyx4xiKra8mZrcwhjMRMUhD5NR1R8esPkzIYxX96JiecFoxAXFuz/GpR3+ev4PE1WamHip78wV0vcmPQtp8w==
 
 cacheable-request@^13.0.12:
-  version "13.0.12"
-  resolved "https://registry.yarnpkg.com/cacheable-request/-/cacheable-request-13.0.12.tgz#193da6b5eddefc45e06127ac6bc0f321ef102dda"
-  integrity sha512-qqK/etGeI/9DV5yRkO50ApDTjip9UXPml1NHYJksUAw15yMLOf8VUO1/8bu4P8birOCqR+hYQ/nh1Lezc8sZrA==
+  version "13.0.13"
+  resolved "https://registry.yarnpkg.com/cacheable-request/-/cacheable-request-13.0.13.tgz#5863a906cc9386afe62e95e7385fc67df54272f2"
+  integrity sha512-/5/6xDTN/AZHOn93MNaU7HUSzOL/YJWOwa5hV84ib1mPUtQB/ZTg5bn57UGfdNwXGhgQfcPpJDy+eGiNgGJI1w==
   dependencies:
     "@types/http-cache-semantics" "^4.0.4"
     get-stream "^9.0.1"
@@ -334,10 +334,10 @@ got@14.6.1:
     responselike "^4.0.2"
     type-fest "^4.26.1"
 
-graphql@16.11.0:
-  version "16.11.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.11.0.tgz#96d17f66370678027fdf59b2d4c20b4efaa8a633"
-  integrity sha512-mS1lbMsxgQj6hge1XZ6p7GPhbrtFwUFYi3wRzXAC/FmYnyXMTvvI3td3rjmQ2u8ewXueaSvRPWaEcgVVOT9Jnw==
+graphql@16.12.0:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.12.0.tgz#28cc2462435b1ac3fdc6976d030cef83a0c13ac7"
+  integrity sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ==
 
 has-symbols@^1.1.0:
   version "1.1.0"
