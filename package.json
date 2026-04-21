@@ -14,7 +14,7 @@
     "cors": "2.8.6",
     "express": "5.2.1",
     "express-graphql": "0.12.0",
-    "got": "15.0.2",
+    "got": "15.0.3",
     "graphql": "16.13.2",
     "ts-tiny-invariant": "2.0.5"
   },
