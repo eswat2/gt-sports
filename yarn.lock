@@ -308,10 +308,10 @@ gopd@^1.2.0:
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.2.0.tgz#89f56b8217bdbc8802bd299df6d7f1081d7e51a1"
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
-got@15.0.3:
-  version "15.0.3"
-  resolved "https://registry.yarnpkg.com/got/-/got-15.0.3.tgz#2bdc00bccdde9a4f781f86bcf9b5476e7b39cd81"
-  integrity sha512-630of5aMTYM6g6epok5nuqvctP8InJISvt39iNt7y0r27rcGCdiPv9Cc6EbwfnkyT1g/shBoVhvDjtXZUbn/Rw==
+got@15.0.4:
+  version "15.0.4"
+  resolved "https://registry.yarnpkg.com/got/-/got-15.0.4.tgz#54eabb19e0a74435eac130278002bb3cfa9a3552"
+  integrity sha512-yzTQs1oldWpv9cNKn8sMe0ou0sskuPEFetIcfM2W06A4j7CLRcd8njJFfaMORFGJ06YV8pbd+u4IvOvkNMKs1w==
   dependencies:
     "@sindresorhus/is" "^8.0.0"
     byte-counter "^0.1.0"
@@ -326,10 +326,10 @@ got@15.0.3:
     type-fest "^5.6.0"
     uint8array-extras "^1.5.0"
 
-graphql@16.13.2:
-  version "16.13.2"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.13.2.tgz#4d2b73df5796b201f1bc2765f5d7067f689cb55f"
-  integrity sha512-5bJ+nf/UCpAjHM8i06fl7eLyVC9iuNAjm9qzkiu2ZGhM0VscSvS6WDPfAwkdkBuoXGM9FJSbKl6wylMwP9Ktig==
+graphql@16.14.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.14.0.tgz#f1128a74b16a34d1245c8436bb07b488d87b83e1"
+  integrity sha512-BBvQ/406p+4CZbTpCbVPSxfzrZrbnuWSP1ELYgyS6B+hNeKzgrdB4JczCa5VZUBQrDa9hUngm0KnexY6pJRN5Q==
 
 has-symbols@^1.1.0:
   version "1.1.0"
