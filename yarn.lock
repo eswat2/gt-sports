@@ -308,10 +308,10 @@ gopd@^1.2.0:
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.2.0.tgz#89f56b8217bdbc8802bd299df6d7f1081d7e51a1"
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
-got@15.0.4:
-  version "15.0.4"
-  resolved "https://registry.yarnpkg.com/got/-/got-15.0.4.tgz#54eabb19e0a74435eac130278002bb3cfa9a3552"
-  integrity sha512-yzTQs1oldWpv9cNKn8sMe0ou0sskuPEFetIcfM2W06A4j7CLRcd8njJFfaMORFGJ06YV8pbd+u4IvOvkNMKs1w==
+got@15.0.5:
+  version "15.0.5"
+  resolved "https://registry.yarnpkg.com/got/-/got-15.0.5.tgz#765b97c8e646b43ecd9aecbba0ad42f142316c10"
+  integrity sha512-PMIMaZuYUCK43+Z9JWEXea4kkX2b3301m81D5TS6QpfG4PmNyirzEdO/Oa2OHAN4GsjnPfvWCWsshKN2rq4/gQ==
   dependencies:
     "@sindresorhus/is" "^8.0.0"
     byte-counter "^0.1.0"
