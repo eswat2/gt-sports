@@ -313,10 +313,10 @@ gopd@^1.2.0:
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.2.0.tgz#89f56b8217bdbc8802bd299df6d7f1081d7e51a1"
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
-got@15.0.6:
-  version "15.0.6"
-  resolved "https://registry.yarnpkg.com/got/-/got-15.0.6.tgz#38a3c7d8964bfae9d70d0b96f7e39d1983b048f4"
-  integrity sha512-6DEiZOte0BMR/QUFlk7CTBtcLpnJx/gAGnmApWtnHvM2i+LssgCaC3Kl3x+SZ/laTbYlmcaabylkwS0t97Y4BA==
+got@15.0.7:
+  version "15.0.7"
+  resolved "https://registry.yarnpkg.com/got/-/got-15.0.7.tgz#cb8613439b0a2f51293f729dd6b6b6e231859ddf"
+  integrity sha512-HA4XUhL2xk0/sA4l3zRyOzfqPtDEiVYpzDae56WLX2aHZYF6v6hjTnuDvURIdznSTPFYW1JUdlREhZjGAF9LCQ==
   dependencies:
     "@sindresorhus/is" "^8.0.0"
     byte-counter "^0.1.0"
@@ -532,10 +532,10 @@ path-to-regexp@^8.0.0:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-8.4.2.tgz#795c420c4f7ca45c5b887366f622ee0c9852cccd"
   integrity sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA==
 
-prettier@3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.0.tgz#287fabfbf20161611aa3b2db8de2a7d8c88ecb2d"
-  integrity sha512-LjIqSIC5VYLzs9WedVmJ2ljNAGnU+DteIClbahu4L/DBeWjZ6iT/k1lAYyu9JUh+1xINxWadaPw/Pl63y/agAw==
+prettier@3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.1.tgz#5868bcf16456bfe145ddbfa107c623b6f39e332c"
+  integrity sha512-ppiDo2CSwexck1eyZUwJHg/N3nf1+6IRCv7W/VJ5vaLnVCmB7+3CdRfMwoCHBBX6xTrREDTksZ4OZl5SSf4zXA==
 
 proxy-addr@^2.0.7:
   version "2.0.7"
